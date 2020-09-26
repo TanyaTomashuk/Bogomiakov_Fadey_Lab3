@@ -17,28 +17,36 @@ VIOLET = (212, 42, 255)
 GREEN = (127, 255, 42)
 
 screen.fill((255, 255, 255))
-ellipse(screen, ORANGE, (202, 571, 490, 400)) # Body
-polygon(screen, SKIN, [(230, 549), (199, 568), (69, 126), (104, 124)]) # Left arm
-polygon(screen, SKIN, [(703, 563), (671, 550), (817, 137), (854, 135)]) # Right arm
-ellipse(screen, LIGHT_SKIN, (40, 40, 90, 95), 1) # Left hand 
+ellipse(screen, ORANGE, (202, 571, 490, 400))  # Body
+polygon(screen, SKIN,
+        [(230, 549), (199, 568), (69, 126), (104, 124)])  # Left arm
+polygon(screen, SKIN,
+        [(703, 563), (671, 550), (817, 137), (854, 135)])  # Right arm
+ellipse(screen, LIGHT_SKIN, (40, 40, 90, 95), 1)  # Left hand
 ellipse(screen, SKIN, (40, 40, 90, 95))
-ellipse(screen, LIGHT_SKIN, (790, 40, 90, 105), 1) # Right hand 
+ellipse(screen, LIGHT_SKIN, (790, 40, 90, 105), 1)  # Right hand
 ellipse(screen, SKIN, (790, 40, 90, 105))
-circle(screen, SKIN, (450, 400), 230)  #Face
-ellipse(screen, BLACK, (328, 318, 96, 87), 1) #Left eye
+circle(screen, SKIN, (450, 400), 230)  # Face
+ellipse(screen, BLACK, (328, 318, 96, 87), 1)  # Left eye
 ellipse(screen, BLUE, (328, 318, 96, 87))
 ellipse(screen, BLACK, (362, 356, 26, 22))
-ellipse(screen, BLACK, (474, 319, 96, 86), 1) #Right eye
+ellipse(screen, BLACK, (474, 319, 96, 86), 1)  # Right eye
 ellipse(screen, BLUE, (474, 319, 96, 86))
 ellipse(screen, BLACK, (511, 355, 26, 22))
-polygon(screen, BLACK, [(431, 415), (469, 415), (450, 448)], 1)#Nose
+polygon(screen, BLACK, [(431, 415), (469, 415), (450, 448)], 1)  # Nose
 polygon(screen, BROWN, [(431, 415), (469, 415), (450, 448)])
-polygon(screen, BLACK, [(326, 465), (568, 463), (452, 544)], 1) #Mouth
+polygon(screen, BLACK, [(326, 465), (568, 463), (452, 544)], 1)  # Mouth
 polygon(screen, RED, [(326, 465), (568, 463), (452, 544)])
-polygon(screen, BLACK, [(256, 531), (317, 600), (272, 688), (183, 675), (174, 578)], 1) #Left Shoulder
-polygon(screen, ORANGE, [(256, 531), (317, 600), (272, 688), (183, 675), (174, 578)])
-polygon(screen, BLACK, [(585, 607), (641, 531), (724, 568), (720, 667), (634, 691)], 1) #Right Shoulder
-polygon(screen, ORANGE, [(585, 607), (641, 531), (724, 568), (720, 667), (634, 691)])
+polygon(screen, BLACK,
+        [(256, 531), (317, 600), (272, 688), (183, 675), (174, 578)],
+        1)  # Left Shoulder
+polygon(screen, ORANGE,
+        [(256, 531), (317, 600), (272, 688), (183, 675), (174, 578)])
+polygon(screen, BLACK,
+        [(585, 607), (641, 531), (724, 568), (720, 667), (634, 691)],
+        1)  # Right Shoulder
+polygon(screen, ORANGE,
+        [(585, 607), (641, 531), (724, 568), (720, 667), (634, 691)])
 polygon(screen, BLACK, [(255, 283), (227, 225), (289, 230)], 1)
 polygon(screen, VIOLET, [(255, 283), (227, 225), (289, 230)])
 polygon(screen, BLACK, [(276, 246), (261, 182), (328, 203)], 1)
@@ -61,7 +69,7 @@ polygon(screen, BLACK, [(611, 231), (675, 228), (645, 285)], 1)
 polygon(screen, VIOLET, [(611, 231), (675, 228), (645, 285)])
 myfont = pygame.font.SysFont('Impact', 120)
 textsurface = myfont.render('PYTHON is AMAZING', True, BLACK, GREEN)
-screen.blit(textsurface,(0, -20))
+screen.blit(textsurface, (0, -20))
 
 pygame.display.update()
 clock = pygame.time.Clock()
