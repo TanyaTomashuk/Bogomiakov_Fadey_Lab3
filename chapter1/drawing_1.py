@@ -16,6 +16,7 @@ ORANGE = (255, 102, 0)
 VIOLET = (212, 42, 255)
 GREEN = (127, 255, 42)
 
+screen.fill((255, 255, 255))
 ellipse(screen, ORANGE, (202, 571, 490, 400)) # Body
 polygon(screen, SKIN, [(230, 549), (199, 568), (69, 126), (104, 124)]) # Left arm
 polygon(screen, SKIN, [(703, 563), (671, 550), (817, 137), (854, 135)]) # Right arm
@@ -58,10 +59,9 @@ polygon(screen, BLACK, [(576, 203), (639, 188), (621, 250)], 1)
 polygon(screen, VIOLET, [(576, 203), (639, 188), (621, 250)])
 polygon(screen, BLACK, [(611, 231), (675, 228), (645, 285)], 1)
 polygon(screen, VIOLET, [(611, 231), (675, 228), (645, 285)])
-rect(screen, GREEN, (0, 0, 927, 90))
-#myfont = pygame.font.SysFont('Comic Sans MS', 30)
-#textsurface = myfont.render('Some Text', False, (100, 100, 100))
-#screen.blit(textsurface,(400,0))
+myfont = pygame.font.SysFont('Impact', 120)
+textsurface = myfont.render('PYTHON is AMAZING', True, BLACK, GREEN)
+screen.blit(textsurface,(0, -20))
 
 pygame.display.update()
 clock = pygame.time.Clock()
