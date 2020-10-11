@@ -1,11 +1,13 @@
 import pygame
 from pygame.draw import *
+import math
 
 pygame.init()
 pygame.font.init()
 
 FPS = 30
 screen = pygame.display.set_mode((1600, 769))
+pi = 3.14159265
 SKIN = (233, 198, 175)
 LIGHT_SKIN = (242, 230, 208)
 BLACK = (0, 0, 0)
@@ -18,6 +20,22 @@ GREEN = (127, 255, 42)
 YELLOW = (255, 212, 42)
 DARK_GREEN = (0, 128, 0)
 LIGHT_GREEN = (190, 200, 183)
+
+
+def hair(n, hair_color, x, y, r):
+    """"
+    Функция рисует волосы из треугольников (треугольники на секторе окружности заданного радиуса)
+    n - число волос (треугольников на секторе)
+    r - радиус окржуности головы, на которой расположены волосы
+    x, y - координаты центра окружности головы
+    hair_color - цвет волос
+    """
+    for i in range(1, n + 1, 1):
+        polygon_i = pygame.Surface((62, 31 * 1.73), pygame.SRCALPHA)
+        polygon(polygon_i, hair_color, ((0, 31 * 1.73), (62, 31 * 1.73), (31, 0)))
+        polygon_i = pygame.transform.rotate(polygon_i, 10 * (n + 1) / 2 - 12 * (i - 1))
+        screen.blit(polygon_i, (x - r * math.sin((10 * (n + 1) / 2 - 12 * (i - 1)) / 180 * pi),
+                                y - 31 * 1.73 - r * math.cos((10 * (n + 1) / 2 - 12 * (i - 1)) / 180 * pi)))
 
 
 def fan_draw(x, y, hair_color, tshirt_color, eye_color):
@@ -59,27 +77,7 @@ def fan_draw(x, y, hair_color, tshirt_color, eye_color):
     # Right Shoulder
     polygon(screen, tshirt_color, [(x + 585, y + 607), (x + 641, y + 531),
             (x + 724, y + 568), (x + 720, y + 667), (x + 634, y + 691)])
-    # Hair
-    polygon(screen, hair_color,
-            [(x + 255, y + 283), (x + 227, y + 225), (x + 289, y + 230)])
-    polygon(screen, hair_color,
-            [(x + 276, y + 246), (x + 261, y + 182), (x + 328, y + 203)])
-    polygon(screen, hair_color,
-            [(x + 313, y + 216), (x + 309, y + 150), (x + 366, y + 180)])
-    polygon(screen, hair_color,
-            [(x + 348, y + 196), (x + 355, y + 131), (x + 405, y + 171)])
-    polygon(screen, hair_color,
-            [(x + 388, y + 180), (x + 412, y + 119), (x + 453, y + 169)])
-    polygon(screen, hair_color,
-            [(x + 436, y + 176), (x + 472, y + 123), (x + 501, y + 181)])
-    polygon(screen, hair_color,
-            [(x + 489, y + 185), (x + 522, y + 129), (x + 554, y + 185)])
-    polygon(screen, hair_color,
-            [(x + 535, y + 186), (x + 592, y + 157), (x + 589, y + 222)])
-    polygon(screen, hair_color,
-            [(x + 576, y + 203), (x + 639, y + 188), (x + 621, y + 250)])
-    polygon(screen, hair_color,
-            [(x + 611, y + 231), (x + 675, y + 228), (x + 645, y + 285)])
+    hair(12, hair_color, x + 412, y + 418, 250)
 
 
 screen.fill((255, 255, 255))
