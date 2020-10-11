@@ -59,7 +59,7 @@ def fan_draw(x, y, hair_color, tshirt_color, eye_color):
     # Right Shoulder
     polygon(screen, tshirt_color, [(x + 585, y + 607), (x + 641, y + 531),
             (x + 724, y + 568), (x + 720, y + 667), (x + 634, y + 691)])
-    #Hair
+    # Hair
     polygon(screen, hair_color,
             [(x + 255, y + 283), (x + 227, y + 225), (x + 289, y + 230)])
     polygon(screen, hair_color,
@@ -98,6 +98,5 @@ while not finished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
-
 
 pygame.quit()
